@@ -9,14 +9,20 @@ export class SearchComponent {
 
   artistas: any[] = [];
   loading: boolean = false;
+  error: boolean = false;
+  errorMsj: string = '';
 
   constructor(private spotify: SpotifyService) { }
 
   buscar(termino: string, tipo: string = 'artist') {
     this.loading = true;
     this.spotify.getArtist(termino, tipo).subscribe((data: any) => {
-      console.log(data);
+      this.error = false;
       this.artistas = data;
+      this.loading = false;
+    }, (error) => {
+      this.error = true;
+      this.errorMsj = error.error.error.message;
       this.loading = false;
     });
   }

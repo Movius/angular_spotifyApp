@@ -12,6 +12,8 @@ export class ArtistaComponent implements OnInit {
   artista: any;
   loading: boolean;
   topTracks: any[] = [];
+  error: boolean = false;
+  errorMsj: string = '';
 
   constructor(
     private spotifyService: SpotifyService,
@@ -26,12 +28,21 @@ export class ArtistaComponent implements OnInit {
         .subscribe((data: any) => {
           this.artista = data;
           this.loading = false;
+          this.error = false;
+        }, (error) => {
+          this.error = true;
+          this.errorMsj = error.error.error.message;
+          this.loading = false;
         });
 
       this.spotifyService.getArtistTopTracks(params.id)
         .subscribe((data: any) => {
           this.topTracks = data;
-          console.log(this.topTracks);
+          this.loading = false;
+          this.error = false;
+        }, (error) => {
+          this.error = true;
+          this.errorMsj = error.error.error.message;
           this.loading = false;
         });
     });
