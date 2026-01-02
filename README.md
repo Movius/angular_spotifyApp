@@ -1,6 +1,6 @@
 # Spotify App 🎵
 
-Esta es una aplicación desarrollada con **Angular 6** que consume la API de Spotify para buscar artistas, ver sus lanzamientos y escuchar vistas previas de sus canciones más populares.
+Esta es una aplicación desarrollada con **Angular 6** que consume la API de Spotify para buscar artistas, ver sus lanzamientos y escuchar vistas previas de sus canciones más populares con un diseño responsive.
 
 ## 🚀 Características
 
