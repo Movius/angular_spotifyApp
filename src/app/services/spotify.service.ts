@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { map, catchError, switchMap } from 'rxjs/operators';
 import { throwError, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class SpotifyService {
   getSpotifyToken(): Observable<string> {
     const body = new HttpParams().set('grant_type', 'client_credentials');
     const headers = new HttpHeaders({
-      'Authorization': 'Basic ZDZiNTU3MzRhYTNmNGI0OWFmODlhZTgwMjNiNmM2OWU6NDY1OWNhODgxZWFkNGVlZDgxYzQ1MTk3ZjA3MWRiMzQ=',
+      'Authorization': environment.spotifyKey,
       'Content-Type': 'application/x-www-form-urlencoded'
     });
 

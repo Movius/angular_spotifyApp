@@ -22,12 +22,17 @@ jobs:
         with:
           node-version: 18
 
+      - name: Inject Spotify Key 🔑
+        run: |
+          sed -i "s|SPOTIFY_KEY_PLACEHOLDER|${{ secrets.SPOTIFY_KEY }}|g" src/environments/environment.prod.ts
+
       - name: Install and Build 🔧
         run: |
           npm install
           npm run ng build -- --prod --base-href /angular_spotifyApp/
         env:
           NODE_OPTIONS: --openssl-legacy-provider
+
 
 
 
