@@ -1,0 +1,19 @@
+<div class="card-columns">
+  <div class="card animated fadeIn cursor-pointer" *ngFor="let item of items" (click)="verArtista(item)">
+    <img [src]="item.images | noimage" class="card-img-top" [alt]="item.name">
+    <div class="card-body">
+      <h5 class="card-title">
+        {{item.name}}
+        <span *ngIf="item.release_date" class="badge badge-dark">{{item.release_date | date:'yyyy - MM'}}</span>
+        <span *ngIf="item.popularity" class="badge badge-dark">{{item.popularity}}</span>
+        <span *ngIf="item.type" class="badge badge-warning">{{item.type}}</span>
+      </h5>
+      <p *ngIf="item.genres" class="card-text">
+        <span *ngFor="let genre of item.genres" class="badge badge-danger">{{genre}}</span>
+      </p>
+      <p *ngIf="item.artists" class="card-text">
+        <span *ngFor="let artist of item.artists" class="badge badge-danger">{{artist.name}}</span>
+      </p>
+    </div>
+  </div>
+</div>

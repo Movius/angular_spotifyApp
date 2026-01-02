@@ -1,0 +1,9 @@
+<div class="alert alert-danger" *ngIf="error">
+    {{ errorMsj }}
+</div>
+
+<h1>Albums</h1>
+<hr>
+
+<app-loading *ngIf="loading"></app-loading>
+<app-card *ngIf="!loading" [items]="albums"></app-card>

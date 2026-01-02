@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Buscar</span>
+      </div>
+      <input type="text" (keyup)="buscar(termino.value, tipo.value)" #termino class="form-control w-50"
+        placeholder="Buscar artista...">
+      <select (change)="buscar(tipo.value)" #tipo class="form-control w-25">
+        <option value="artist">Artista</option>
+        <option value="album">Album</option>
+        <option value="playlist">Playlist</option>
+        <option value="track">Track</option>
+        <option value="show">Show</option>
+        <option value="episode">Episode</option>
+        <option value="audiobook">Audiobook</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="alert alert-danger" *ngIf="error">
+  {{ errorMsj }}
+</div>
+
+<div class="row mt-2">
+  <app-loading *ngIf="loading" class="w-100"></app-loading>
+  <app-card *ngIf="!loading" [items]="artistas"></app-card>
+</div>
