@@ -13,10 +13,18 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
+      - name: Use Node.js 16
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16
+
       - name: Install and Build 🔧
         run: |
           npm install
           npm run ng build -- --prod --base-href /angular_spotifyApp/
+        env:
+          NODE_OPTIONS: --openssl-legacy-provider
+
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
