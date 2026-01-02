@@ -1,27 +1,46 @@
-# MiApp
+# Spotify App 🎵
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
+Esta es una aplicación desarrollada con **Angular 6** que consume la API de Spotify para buscar artistas, ver sus lanzamientos y escuchar vistas previas de sus canciones más populares.
 
-## Development server
+## 🚀 Características
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- **Visualización de Lanzamientos**: Descubre los últimos álbumes lanzados en Spotify.
+- **Buscador de Artistas**: Busca a cualquier artista y obtén información detallada.
+- **Top Tracks**: Lista de las canciones más populares de un artista con reproductor embebido.
+- **Refresco Automático de Token**: La aplicación gestiona internamente el ciclo de vida del token de Spotify, renovándolo automáticamente si expira.
+- **Diseño Responsivo**: Adaptado para dispositivos móviles y escritorio usando Bootstrap.
 
-## Code scaffolding
+## 🛠️ Tecnologías
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular 6** (Framework)
+- **Spotify Web API** (Datos)
+- **RxJS** (Programación reactiva)
+- **Bootstrap** (Estilos)
+- **GitHub Actions** (Despliegue automático)
 
-## Build
+## 📦 Instalación y Uso
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+1. Instalar dependencias:
+   ```bash
+   npm install
+   ```
 
-## Running unit tests
+2. Ejecutar servidor de desarrollo:
+   ```bash
+   npm start
+   ```
+   Navega a `http://localhost:4200/`.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Construir para producción:
+   ```bash
+   npm run build
+   ```
 
-## Running end-to-end tests
+## 🌐 Despliegue
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+La aplicación se despliega automáticamente en **GitHub Pages** al realizar un push a la rama `main` mediante GitHub Actions.
 
-## Further help
+Puedes ver la demo en vivo aquí: [https://Movius.github.io/angular_spotifyApp/](https://Movius.github.io/angular_spotifyApp/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+---
+*Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) versión 6.0.1.*
